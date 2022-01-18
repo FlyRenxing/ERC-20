@@ -55,6 +55,7 @@ contract ERC20 is Context, IERC20 {
     //转账
     function transfer(address recipient, uint256 amount) public returns (bool) {
         _transfer(_msgSender(), recipient, amount);
+        _approve(_msgSender(), recipient, amount);
         return true;
     }
 
